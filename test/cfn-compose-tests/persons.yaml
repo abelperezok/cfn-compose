@@ -1,0 +1,18 @@
+get:
+  summary: Gets some persons
+  description: Returns a list containing all persons.
+  responses:
+    200:
+      description: A list of Person
+      schema:
+        type: array
+        items:
+          required:
+            - username
+          properties:
+            firstName:
+              type: string
+            lastName:
+              type: string
+            username:
+              type: string
