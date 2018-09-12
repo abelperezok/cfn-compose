@@ -19,11 +19,11 @@ namespace cfn_compose_tests
             System.Environment.CurrentDirectory = parentDir;
 
             var currentPath = Path.GetFullPath(".");
-            Console.WriteLine(currentPath);
+            TestContext.Progress.WriteLine(currentPath);
 
             var input = File.ReadAllText("cloud-api.yaml");
             var output = CfnCompose.Compose(input);
-            Console.WriteLine(output);
+            TestContext.Progress.WriteLine(output);
 
             Assert.Pass();
         }
