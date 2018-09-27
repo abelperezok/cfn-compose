@@ -1,0 +1,52 @@
+Description: Template to create a serverless web api
+Resources:
+  ApiGatewayRestApi:
+    Type: AWS::ApiGateway::RestApi
+    Properties:
+      Name: Serverless API
+      Description: Serverless API - Using CloudFormation and Swagger
+      Body:
+        swagger: 2.0
+        info:
+          version: 1.0.0
+          title: Simple API
+          description: A simple API to learn how to write OpenAPI Specification
+        paths:
+          /persons:
+            get:
+              summary: Gets some persons
+              description: Returns a list containing all persons.
+              responses:
+                200:
+                  description: A list of Person
+                  schema:
+                    type: array
+                    items:
+                      required:
+                      - username
+                      properties:
+                        firstName:
+                          type: string
+                        lastName:
+                          type: string
+                        username:
+                          type: string
+          /pets:
+            get:
+              summary: Gets some pets
+              description: Returns a list containing all pets.
+              responses:
+                200:
+                  description: A list of pets
+                  schema:
+                    type: array
+                    items:
+                      required:
+                      - petname
+                      properties:
+                        petname:
+                          type: string
+                        ownerName:
+                          type: string
+                        breed:
+                          type: string

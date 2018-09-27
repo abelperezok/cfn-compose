@@ -1,0 +1,15 @@
+AWSLambdaExecutionPolicy:
+  Type: AWS::IAM::ManagedPolicy
+  Properties:
+    Description: AWS Lambda Execution Policy
+    PolicyDocument:
+      Version: 2012-10-17
+      Statement:
+        Sid: AllowLambdaWriteLogAccess
+        Effect: Allow
+        Action:
+          - logs:CreateLogGroup
+          - logs:CreateLogStream
+          - logs:PutLogEvents
+        Resource:
+          - "arn:aws:logs:*:*:*"

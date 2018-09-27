@@ -1,0 +1,11 @@
+Description: Template to create a serverless web api 
+
+Resources:
+  ApiGatewayRestApi:
+    Type: AWS::ApiGateway::RestApi
+    Properties:
+      Name: Serverless API
+      Description: Serverless API - Using CloudFormation and Swagger
+      Body: !Include
+        File: simple-swagger.yaml
+

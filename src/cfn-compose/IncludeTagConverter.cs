@@ -26,7 +26,7 @@ namespace cfn_compose
                 throw new YamlException(key.Start, val.End, "Expected a scalar named 'File'");
             }
 
-            var input = File.ReadAllText(val.Value);
+            var input = File.ReadAllText(Path.Combine(YamlSerializer.SearchPath, val.Value));
             var data = YamlSerializer.Deserialize(input);
             return data;
         }

@@ -9,8 +9,6 @@ Resources:
       Body: !Include
         File: simple-swagger.yaml
 
-# Resources2: !Include
-#   File: deployment.yaml
+Resources2: !Include
+   File: policy.yaml
 
-# Resources:
-#   !Include { File: deployment.yaml }

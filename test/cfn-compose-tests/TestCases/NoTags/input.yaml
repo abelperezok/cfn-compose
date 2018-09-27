@@ -1,0 +1,8 @@
+Description: Template to create a serverless web api
+
+Resources:
+  ApiGatewayRestApi:
+    Type: AWS::ApiGateway::RestApi
+    Properties:
+      Name: Serverless API
+      Description: Serverless API

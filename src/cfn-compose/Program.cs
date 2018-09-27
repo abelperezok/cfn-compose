@@ -5,8 +5,9 @@ namespace cfn_compose
 {
     public class CfnCompose
     {
-        public static string Compose(string input)
+        public static string Compose(string input, string searchPath)
         {
+            YamlSerializer.SearchPath = searchPath;
             var data = YamlSerializer.Deserialize(input);
 
             Console.WriteLine(data);
@@ -21,9 +22,9 @@ namespace cfn_compose
     {
         static void Main(string[] args)
         {
-            var input = @"";
+            var input = @""; // read from input file
 
-            var output = CfnCompose.Compose(input);
+            var output = CfnCompose.Compose(input, "");
 
             Console.WriteLine("---output---");
             Console.WriteLine(output);
