@@ -18,6 +18,7 @@ namespace cfn_compose
             parser.Expect<MappingStart>();
             var key = parser.Expect<Scalar>();
             var val = parser.Expect<Scalar>();
+            
             Console.WriteLine($"ReadYaml - {key.Value}, {val.Value}");
             parser.Expect<MappingEnd>();
 
