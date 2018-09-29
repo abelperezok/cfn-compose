@@ -18,8 +18,6 @@ namespace cfn_compose
             parser.Expect<MappingStart>();
             var key = parser.Expect<Scalar>();
             var val = parser.Expect<Scalar>();
-            
-            Console.WriteLine($"ReadYaml - {key.Value}, {val.Value}");
             parser.Expect<MappingEnd>();
 
             if (key.Value != "File")
@@ -27,8 +25,13 @@ namespace cfn_compose
                 throw new YamlException(key.Start, val.End, "Expected a scalar named 'File'");
             }
 
+            //Console.WriteLine($"Reading file {val.Value}");
             var input = File.ReadAllText(Path.Combine(YamlSerializer.SearchPath, val.Value));
+            //Console.WriteLine($"Successfully loaded file {val.Value}");
+
+            Console.WriteLine($"Deserializing file {val.Value}");
             var data = YamlSerializer.Deserialize(input);
+            //Console.WriteLine($"Successfully Deserialized file {val.Value}");
             return data;
         }
 
