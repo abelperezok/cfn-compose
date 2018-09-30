@@ -4,6 +4,10 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <RootNamespace>cfn_compose</RootNamespace>
+
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>cfn-compose</ToolCommandName>
+    <VersionPrefix>0.0.1</VersionPrefix>
   </PropertyGroup>
 
   <ItemGroup>
