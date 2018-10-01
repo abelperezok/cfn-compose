@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - cd src/cfn-compose/
+      - dotnet build -c Release
+      - cd ../../test/cfn-compose-tests/
+      - dotnet test -c Release
+  post_build:
+    commands:
+      - cd ../../src/cfn-compose
+      - dotnet pack -c Release -o ../../nuget/
+artifacts:
+  files:
+    - nuget/*
