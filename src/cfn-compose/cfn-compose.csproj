@@ -8,6 +8,17 @@
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>cfn-compose</ToolCommandName>
     <VersionPrefix>0.0.2</VersionPrefix>
+
+    <PackageId>cfn-compose</PackageId>
+    <Authors>Abel Perez Martinez</Authors>
+    <Company>Abel Perez Martinez</Company>
+    <Title>CloudFormation composer</Title>
+    <Description>Allows to combine a CloudFormation template from several smaller fragments</Description>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/abelperezok/cfn-compose</PackageProjectUrl>
+    <PackageIconUrl></PackageIconUrl>
+    <PackageTags>CloudFormation;Yaml;dotnet</PackageTags>
+    <RepositoryUrl>https://github.com/abelperezok/cfn-compose</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
