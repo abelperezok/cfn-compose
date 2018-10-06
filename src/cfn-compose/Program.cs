@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using McMaster.Extensions.CommandLineUtils;
@@ -33,6 +34,13 @@ namespace cfn_compose
                 var assembly = Assembly.GetExecutingAssembly();
                 var assemblyVersion = assembly.GetName().Version;
                 Console.WriteLine($"AssemblyVersion {assemblyVersion}");
+
+                var fileVersionInfo = FileVersionInfo.GetVersionInfo(assembly.Location);
+                var fileVersion = fileVersionInfo.FileVersion;
+                Console.WriteLine($"FileVersion {fileVersion}");
+
+                var informationVersion = assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>().InformationalVersion;
+                Console.WriteLine($"InformationalVersion {informationVersion}");
                 return;
             }
 
