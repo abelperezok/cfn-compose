@@ -11,6 +11,8 @@ phases:
     commands:
       - cd ../../src/cfn-compose
       - dotnet pack -c Release -o ../../nuget/
+      - echo $CODEBUILD_SOURCE_VERSION
+#      - dotnet pack -c Release -o ../../nuget/ --version-suffix build-$(date +%Y%m%d%H%M%S)
 artifacts:
   files:
     - nuget/*
