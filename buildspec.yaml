@@ -1,22 +1,21 @@
 version: 0.2
 
 phases:
+  pre_build:
+    commands:
+      - DATE=$(date +%Y%m%d%H%M%S)
+      - CONFIG=Release
   build:
     commands:
       - cd src/cfn-compose/
-      - dotnet build -c Release
+      - dotnet build -c $CONFIG
       - cd ../../test/cfn-compose-tests/
-      - dotnet test -c Release
-      - DATE=$(date +%Y%m%d%H%M%S)
+      - dotnet test -c $CONFIG
   post_build:
     commands:
       - cd ../../src/cfn-compose
-#      - dotnet pack -c Release -o ../../nuget/
-#      - echo $NUGET_API_KEY
-#      - DATE=$(date +%Y%m%d%H%M%S)
-      - echo $DATE
-#      - dotnet pack -c Release -o ../../nuget/ --version-suffix build-$DATE
-#      - dotnet nuget push ../../nuget/*.nupkg --source https://api.nuget.org/v3/index.json --api-key $NUGET_API_KEY
+      - dotnet pack -c $CONFIG -o ../../nuget/ --version-suffix build-$DATE
+      - dotnet nuget push ../../nuget/*.nupkg --source https://api.nuget.org/v3/index.json --api-key $NUGET_API_KEY
 artifacts:
   files:
     - nuget/*
