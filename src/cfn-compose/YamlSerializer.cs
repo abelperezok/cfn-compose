@@ -13,6 +13,7 @@ namespace cfn_compose
             var reader = new StringReader(yaml);
             var deserializer = new DeserializerBuilder()
                 .WithTypeConverter(new IncludeTagConverter())
+                .WithTypeConverter(new IntToStringConverter())
                 .WithTagMapping(IncludeTag, typeof(IncludeTag))
                 //.WithTagMapping("!Ref", typeof(string))
                 .Build();
@@ -23,6 +24,7 @@ namespace cfn_compose
         public static string Serialize(object data)
         {
             var serializer = new SerializerBuilder()
+                .WithTypeConverter(new IntToStringConverter())
                 .Build();
             var yaml = serializer.Serialize(data);
             return yaml;

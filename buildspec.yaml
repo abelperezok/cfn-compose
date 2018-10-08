@@ -14,8 +14,8 @@ phases:
   post_build:
     commands:
       - cd ../../src/cfn-compose
-      - dotnet pack -c $CONFIG -o ../../nuget/ --version-suffix build-$DATE
-      - dotnet nuget push ../../nuget/*.nupkg --source https://api.nuget.org/v3/index.json --api-key $NUGET_API_KEY
+      # - dotnet pack -c $CONFIG -o ../../nuget/ --version-suffix build-$DATE
+      # - dotnet nuget push ../../nuget/*.nupkg --source https://api.nuget.org/v3/index.json --api-key $NUGET_API_KEY
 artifacts:
   files:
     - nuget/*

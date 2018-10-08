@@ -9,7 +9,7 @@ paths:
       summary: Gets some persons
       description: Returns a list containing all persons.
       responses:
-        200:
+        "200":
           description: A list of Person
           schema:
             type: array

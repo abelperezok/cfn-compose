@@ -1,0 +1,9 @@
+responses:
+  200:
+    description: A normal output name / old
+    schema:
+      properties:
+        Name:
+          type: string
+        Old:
+          type: boolean

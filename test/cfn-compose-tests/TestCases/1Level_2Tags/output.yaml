@@ -9,7 +9,7 @@ paths:
       summary: Gets some persons
       description: Returns a list containing all persons.
       responses:
-        200:
+        "200":
           description: A list of Person
           schema:
             type: array
@@ -28,7 +28,7 @@ paths:
       summary: Gets some pets
       description: Returns a list containing all pets.
       responses:
-        200:
+        "200":
           description: A list of pets
           schema:
             type: array
