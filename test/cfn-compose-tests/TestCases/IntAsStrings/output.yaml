@@ -7,3 +7,9 @@ responses:
           type: string
         Old:
           type: boolean
+  "404":
+    description: not found
+    schema:
+      properties:
+        Name:
+          type: string
